@@ -1,6 +1,5 @@
-language:  java
-
+language: java
 jdk:
-  - openjdk8
+  - oraclejdk8
 
-script:  ant build
+script: ant build
