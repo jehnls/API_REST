@@ -1,11 +1,13 @@
 package com.crud.api.controller.pessoa;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,6 +24,12 @@ public class pessoaController {
 
 	@Autowired
 	PessoaRepository pessoaRepository;
+
+	@GetMapping("/procurar/{id}")
+	public Optional<Pessoa> buscarPessoa(@PathVariable(value = "id") Long id) {
+		System.out.print(id);
+		return pessoaRepository.findById(id);
+	}
 
 	@GetMapping("/listar")
 	public List<Pessoa> listarPessoas() {
