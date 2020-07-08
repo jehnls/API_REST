@@ -21,6 +21,7 @@ public class Pessoa implements Serializable {
 	private String nome;
 	private String sobrenome;
 	private String email;
+	private boolean ativo = true;												
 
 	public String getNome() {
 		return nome;
@@ -52,6 +53,14 @@ public class Pessoa implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
 	}
 
 }

@@ -37,8 +37,12 @@ public class pessoaController {
 	}
 
 	@PostMapping("/cadastrar")
-	public void salvarPessoa(@RequestBody Pessoa pessoa) {
+	public Pessoa salvarPessoa(@RequestBody Pessoa pessoa) {
 		pessoaRepository.save(pessoa);
+		
+		// Retorna uma resposta.	
+		return pessoa;
+		
 	}
 
 	@PutMapping("/alterar")
